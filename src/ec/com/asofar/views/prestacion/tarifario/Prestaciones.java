@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.com.asofar.views.prestacion;
+package ec.com.asofar.views.prestacion.tarifario;
 
 /**
  *
