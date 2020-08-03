@@ -157,14 +157,11 @@ public class presta extends javax.swing.JDialog {
     }
     
     public void CargarDocumento(InMovimientos obj) {
-        List<InTipoDocumento> listcaja = documentoController.findInTipoDocumentoEntities();
-        for (int i = 0; i < listcaja.size(); i++) {
+        List<InDetalleMovimiento> detMov = detMovController.findInDetalleMovimientoEntities();
+        for (int i = 0; i < detMov.size(); i++) {
             
-            if (listcaja.get(i).getIdTipoDocumento() != null) {
-                if (listcaja.get(i).getIdTipoDocumento() == obj.getInTipoDocumento().getIdTipoDocumento()) {
-                    TxtDocumento.setText(listcaja.get(i).getNombreDocumento());
-                    
-                }
+            if (detMov.get(i).getDescripcion() != null) {
+                    TxtDocumento.setText(detMov.get(i).getDescripcion());
             }
             
         }
@@ -199,9 +196,9 @@ public class presta extends javax.swing.JDialog {
     }
     
     public void CargarFormulario() {
-        List<InMovimientos> listCab = new ArrayList<InMovimientos>();
+        List<InDetalleMovimiento> listCab = new ArrayList<InDetalleMovimiento>();
         
-        listCab = cabMovController.findInMovimientosEntities();
+        listCab = detMovController.findInDetalleMovimientoEntities();
         
         for (int i = 0; i < listCab.size(); i++) {
             

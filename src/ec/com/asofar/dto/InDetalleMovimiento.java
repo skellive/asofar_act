@@ -58,6 +58,8 @@ public class InDetalleMovimiento implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected InDetalleMovimientoPK inDetalleMovimientoPK;
+    @Column(name = "id_detalle_movimiento")
+    private Date idDtetalleMovimiento;
     @Column(name = "anio_documento")
     @Temporal(TemporalType.DATE)
     private Date anioDocumento;
