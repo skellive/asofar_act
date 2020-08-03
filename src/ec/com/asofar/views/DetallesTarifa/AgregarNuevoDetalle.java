@@ -118,6 +118,11 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         txtUnidadServicio.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txtUnidadServicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUnidadServicioActionPerformed(evt);
+            }
+        });
 
         btnAgrgarPrestacion.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         btnAgrgarPrestacion.setText("+");
@@ -134,6 +139,11 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         jLabel4.setText("TARIFARIO:");
 
         txtidtarifario.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txtidtarifario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidtarifarioActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE DE PRESTACION:");
@@ -177,6 +187,11 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         jLabel8.setText("VALOR MINIMO DE VENTA:");
 
         txt_valor_costo.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txt_valor_costo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_valor_costoActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jLabel11.setText("VALOR DE COSTO :");
@@ -271,6 +286,12 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
             }
         });
 
+        txtPrestacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrestacionActionPerformed(evt);
+            }
+        });
+
         btnSalir.setBackground(new java.awt.Color(254, 254, 254));
         btnSalir.setFont(new java.awt.Font("Ubuntu", 1, 10)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(1, 1, 1));
@@ -316,7 +337,7 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addGap(18, 18, 18)
-                                    .addComponent(txtidtarifario, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE))
+                                    .addComponent(txtidtarifario))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel1)
                                     .addGap(18, 18, 18)
@@ -530,6 +551,22 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
     private void txt_valor_ventaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_valor_ventaKeyReleased
         txt_porcentaje_descuento.setText("");
     }//GEN-LAST:event_txt_valor_ventaKeyReleased
+
+    private void txtidtarifarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidtarifarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtidtarifarioActionPerformed
+
+    private void txtPrestacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrestacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrestacionActionPerformed
+
+    private void txtUnidadServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidadServicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUnidadServicioActionPerformed
+
+    private void txt_valor_costoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_valor_costoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_valor_costoActionPerformed
     public void cargar() {
         txtidtarifario.setText(String.valueOf(tp.getDescripcion()));
 //        emp1.setText(String.valueOf(tp.getPrTarifarioPK().getIdEmpresa()));
