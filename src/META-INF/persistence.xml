@@ -68,12 +68,9 @@
     <class>ec.com.asofar.dto.DetalleEgreso</class>
     <class>ec.com.asofar.dto.Factura</class>
     <class>ec.com.asofar.dto.PrEmpaque</class>
-    <class>ec.com.asofar.dto.Producto</class>
-    <class>ec.com.asofar.dto.PrestacionesAutoTarifarios</class>
-    <class>ec.com.asofar.dto.PrestacionesAutoTarifarios_1</class>
-    <class>ec.com.asofar.dto.PrestacionesAutoTarifariosPK</class>
-    <class>ec.com.asofar.dao.PrestacionesAutoTarifarios</class>
+    <class>ec.com.asofar.dto.Producto</class>        
     <class>ec.com.asofar.dto.PrestacionAutoTarifario</class>
+    <class>ec.com.asofar.dto.PrestacionAutoTarifarioPK</class>
     <properties>
       <!--red 
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://173.212.207.238:57635/bd_farmacia_desa?zeroDateTimeBehavior=convertToNull"/>
