@@ -66,13 +66,6 @@ public class Tarifario extends javax.swing.JDialog {
         emp = em;
         suc = su;
 
-        txt_valor_costo.setEditable(false);
-        txt_valor_min.setEditable(false);
-        txtDescuent_valor.setEditable(false);
-        txtidtarifario.setEditable(false);
-        txtPrestacion.setEditable(false);
-        txtUnidadServicio.setEditable(false);
-
         cargar();
 
     }
@@ -324,18 +317,19 @@ public class Tarifario extends javax.swing.JDialog {
     public void CalcularValorMinimo() {
         double porcentajeMinVenta = Double.parseDouble(txt_valor_min_porcentaje.getText());
 
-        double valorCosto = Double.parseDouble(txt_valor_costo.getText());
+        double valorCosto = Double.parseDouble("aqui va el valor de costo");
 
         double valor = (((valorCosto * porcentajeMinVenta) / 100)) + valorCosto;
 
-        txt_valor_min.setText(String.format("%.2f", valor).replace(",", "."));
+        //obtiene el valor minimo
+        //txt_valor_min.setText(String.format("%.2f", valor).replace(",", "."));
 
     }
 
     public void CalcularDescuento() {
         double porcentajeDescuento = Double.parseDouble(txt_porcentaje_descuento.getText());
 
-        double valorVenta = Double.parseDouble(txt_valor_venta.getText());
+        double valorVenta = Double.parseDouble(" valo de la valor_venta");
 
         double valor = (((valorVenta * porcentajeDescuento) / 100));
         System.out.println(" valor" + valor);
@@ -348,7 +342,7 @@ public class Tarifario extends javax.swing.JDialog {
         int r = JOptionPane.showConfirmDialog(null, "¿Esta seguro de guardar los datos?", "", JOptionPane.YES_NO_OPTION);
         if (r == JOptionPane.YES_OPTION) {
 
-            if (txt_valor_venta.getText().equals("")) {
+            /*if (txt_valor_venta.getText().equals("")) {
                 JOptionPane.showMessageDialog(null, "LLENE VALOR DE VENTAN!");
             } else {
 
@@ -384,11 +378,6 @@ public class Tarifario extends javax.swing.JDialog {
                     PrTarifario prTarifario = new PrTarifario();
                     prTarifario.setPrTarifarioPK(prTarifarioPK);
                     pre.setPrTarifario(prTarifario);
-
-                    pre.setValorCosto(Double.parseDouble(txt_valor_costo.getText().toString()));
-                    pre.setValorDescuento(Double.parseDouble(txtDescuent_valor.getText()));
-                    pre.setValorVenta(Double.parseDouble(txt_valor_venta.getText()));
-                    pre.setValorMinVenta(Double.parseDouble(txt_valor_min.getText()));
                     pre.setEstado("A");
                     pre.setUsuarioCreacion(usu.getUsuario());
                     pre.setIdPrestacion(BigInteger.valueOf(objpres.getPrPrestaciones().getIdPrestacion()));
@@ -404,7 +393,7 @@ public class Tarifario extends javax.swing.JDialog {
                         Logger.getLogger(Listar_PrestacionesPorServicio.class.getName()).log(Level.SEVERE, null, e);
                     }
                 }
-            }
+            }*/
         }
 
 
