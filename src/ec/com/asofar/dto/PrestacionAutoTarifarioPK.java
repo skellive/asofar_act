@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @author User
  */
 @Entity
-public class PrestacionesAutoTarifariosPK implements Serializable {
+public class PrestacionAutoTarifarioPK implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -41,10 +41,10 @@ public class PrestacionesAutoTarifariosPK implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof PrestacionesAutoTarifariosPK)) {
+        if (!(object instanceof PrestacionAutoTarifarioPK)) {
             return false;
         }
-        PrestacionesAutoTarifariosPK other = (PrestacionesAutoTarifariosPK) object;
+        PrestacionAutoTarifarioPK other = (PrestacionAutoTarifarioPK) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -53,11 +53,7 @@ public class PrestacionesAutoTarifariosPK implements Serializable {
 
     @Override
     public String toString() {
-        return "ec.com.asofar.dto.PrestacionesAutoTarifariosPK[ id=" + id + " ]";
-    }
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+        return "ec.com.asofar.dto.PrestacionAutoTarifarioPK[ id=" + id + " ]";
     }
     
 }

@@ -19,6 +19,7 @@ public class Asofar {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.NoSuchMethodException
      */
     public static void main(String[] args) throws NoSuchMethodException {
         Frm_cargarSistema fr= new Frm_cargarSistema();
