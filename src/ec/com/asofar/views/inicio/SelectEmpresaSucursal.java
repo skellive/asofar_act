@@ -16,8 +16,12 @@ import ec.com.asofar.dto.SeUsuarios;
 import ec.com.asofar.util.EntityManagerUtil;
 import java.awt.MouseInfo;
 import java.awt.Point;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 /**
  *
@@ -59,13 +63,13 @@ public class SelectEmpresaSucursal extends javax.swing.JDialog {
     public void comboEmpresa(SeUsuarios user) {
 
         listausr = susrjc.findSeUsuarioSucurRolEntities();
-        
+
         listaempresa = sejc.findSeEmpresaEntities();
-        
+
         for (int j = 0; j < listaempresa.size(); j++) {
 //            if (Objects.equals(listausr.get(j).getIdUsuario().getIdUsuario(), user.getIdUsuario())) {
-                cbempresa.addItem(listaempresa.get(j).getNombreComercial());
-                System.out.println("lista: "+listaempresa.get(j).getNombreComercial());
+            cbempresa.addItem(listaempresa.get(j).getNombreComercial());
+            System.out.println("lista: " + listaempresa.get(j).getNombreComercial());
 //            }
         }
     }
@@ -229,7 +233,37 @@ public class SelectEmpresaSucursal extends javax.swing.JDialog {
         PantallaPrincipal pp = new PantallaPrincipal(us, em, su);
         setVisible(false);
         pp.setVisible(true);
+        //respaldar();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void respaldar() {
+        try {
+            Date myDate = new Date();
+            String nombre = ("bd_farmacia_desa " + new SimpleDateFormat("-dd-MM-yyyy").format(myDate) + ".sql");
+            String ruta = "C:\\Users\\adria\\OneDrive\\Escritorio\\base d datos\\";
+            Process p = Runtime.getRuntime().exec("mysqldump -u root -proot bd_farmacia_desa");
+
+            InputStream is = p.getInputStream();//Pedimos la entrada
+            FileOutputStream fos = new FileOutputStream(ruta + nombre); //creamos el archivo para le respaldo
+            byte[] buffer = new byte[1000]; //Creamos una variable de tipo byte para el buffer
+
+            int leido = is.read(buffer); //Devuelve el número de bytes leídos o -1 si se alcanzó el final del stream.
+            while (leido > 0) {
+                fos.write(buffer, 0, leido);//Buffer de caracteres, Desplazamiento de partida para empezar a escribir caracteres, Número de caracteres para escribir
+                leido = is.read(buffer);
+            }
+
+            if (leido == 0) {
+                System.out.println("Respaldo error");
+            } else {
+                System.out.println("Respaldo exitoso");
+            }
+
+            fos.close();//Cierra respaldo
+        } catch (IOException ex) {
+            System.out.println("Exception: " + ex.getMessage());
+        }
+    }
 
     private void jLabel1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MousePressed
         x = evt.getX();

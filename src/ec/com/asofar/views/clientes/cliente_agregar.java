@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ec.com.asofar.views.clientes;
+
 import ec.com.asofar.dao.SeClientesJpaController;
 import ec.com.asofar.dao.SeTipoIdentificacionJpaController;
 import ec.com.asofar.daoext.ObtenerDTO;

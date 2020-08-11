@@ -257,7 +257,7 @@ public class crearOrdenCompraForm extends javax.swing.JDialog {
             System.out.println("Subtotal " + Subtotal);
             listadetCompra.get(i).setSubtotal(Subtotal);
 
-            BigDecimal Descuento = listadetCompra.get(i).getDescuento();
+            BigDecimal Descuento = listadetCompra.get(i).getDescuento();          
             System.out.println("descuento  " + Descuento);
             TotalDescuento = TotalDescuento.add(Descuento);
             listadetCompra.get(i).setDescuento(Descuento);

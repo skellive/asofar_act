@@ -118,11 +118,6 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         txtUnidadServicio.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txtUnidadServicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUnidadServicioActionPerformed(evt);
-            }
-        });
 
         btnAgrgarPrestacion.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         btnAgrgarPrestacion.setText("+");
@@ -139,11 +134,6 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         jLabel4.setText("TARIFARIO:");
 
         txtidtarifario.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txtidtarifario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidtarifarioActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jLabel3.setText("NOMBRE DE PRESTACION:");
@@ -164,6 +154,11 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         });
 
         txt_porcentaje_descuento.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
+        txt_porcentaje_descuento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_porcentaje_descuentoActionPerformed(evt);
+            }
+        });
         txt_porcentaje_descuento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txt_porcentaje_descuentoKeyReleased(evt);
@@ -172,6 +167,11 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
 
         txtDescuent_valor.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         txtDescuent_valor.setMinimumSize(new java.awt.Dimension(6, 30));
+        txtDescuent_valor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescuent_valorActionPerformed(evt);
+            }
+        });
 
         txt_valor_venta.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         txt_valor_venta.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -187,11 +187,6 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         jLabel8.setText("VALOR MINIMO DE VENTA:");
 
         txt_valor_costo.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
-        txt_valor_costo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_valor_costoActionPerformed(evt);
-            }
-        });
 
         jLabel11.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jLabel11.setText("VALOR DE COSTO :");
@@ -286,12 +281,6 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
             }
         });
 
-        txtPrestacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrestacionActionPerformed(evt);
-            }
-        });
-
         btnSalir.setBackground(new java.awt.Color(254, 254, 254));
         btnSalir.setFont(new java.awt.Font("Ubuntu", 1, 10)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(1, 1, 1));
@@ -337,7 +326,7 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addGap(18, 18, 18)
-                                    .addComponent(txtidtarifario))
+                                    .addComponent(txtidtarifario, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel1)
                                     .addGap(18, 18, 18)
@@ -552,21 +541,13 @@ public class AgregarNuevoDetalle extends javax.swing.JDialog {
         txt_porcentaje_descuento.setText("");
     }//GEN-LAST:event_txt_valor_ventaKeyReleased
 
-    private void txtidtarifarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidtarifarioActionPerformed
+    private void txt_porcentaje_descuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_porcentaje_descuentoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtidtarifarioActionPerformed
+    }//GEN-LAST:event_txt_porcentaje_descuentoActionPerformed
 
-    private void txtPrestacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrestacionActionPerformed
+    private void txtDescuent_valorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescuent_valorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrestacionActionPerformed
-
-    private void txtUnidadServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUnidadServicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUnidadServicioActionPerformed
-
-    private void txt_valor_costoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_valor_costoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_valor_costoActionPerformed
+    }//GEN-LAST:event_txtDescuent_valorActionPerformed
     public void cargar() {
         txtidtarifario.setText(String.valueOf(tp.getDescripcion()));
 //        emp1.setText(String.valueOf(tp.getPrTarifarioPK().getIdEmpresa()));
