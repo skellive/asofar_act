@@ -180,6 +180,11 @@ public class AgregarPrestacion extends javax.swing.JDialog {
 
         txtProducto.setEditable(false);
         txtProducto.setToolTipText("");
+        txtProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProductoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -345,6 +350,10 @@ public class AgregarPrestacion extends javax.swing.JDialog {
         
         
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProductoActionPerformed
     public int bloqueo() {
         int bloqueo;
         String selecciona = (String) cmbxIG.getSelectedItem();

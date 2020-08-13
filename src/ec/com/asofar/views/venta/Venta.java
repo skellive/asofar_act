@@ -55,9 +55,11 @@ import ec.com.asofar.util.Tablas;
 import ec.com.asofar.views.caja.Cierre_Caja;
 import ec.com.asofar.views.clientes.NuevoCliente;
 import ec.com.asofar.views.clientes.cliente_agregar;
+import ec.com.asofar.views.compra_inventario.compra_inventario;
 import ec.com.asofar.views.facturacion.Factura;
 import ec.com.asofar.views.facturacion.GenerarXml2;
 import ec.com.asofar.views.inicio.PantallaPrincipal;
+import ec.com.asofar.views.prestaciones.ActualizarPrestacion;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -383,7 +385,7 @@ public class Venta extends javax.swing.JInternalFrame {
         txtTipoIdent = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        cbx_FormaPago = new javax.swing.JComboBox<>();
+        cbx_FormaPago = new javax.swing.JComboBox<String>();
         jLabel21 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -566,7 +568,7 @@ public class Venta extends javax.swing.JInternalFrame {
             }
         });
 
-        cbx_FormaPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CONTADO", "CREDITO" }));
+        cbx_FormaPago.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "CONTADO", "CREDITO" }));
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel21.setText("CORREO: ");
@@ -767,6 +769,9 @@ public class Venta extends javax.swing.JInternalFrame {
         ));
         tba_detalle.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         tba_detalle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tba_detalleMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 tba_detalleMousePressed(evt);
             }
@@ -1269,7 +1274,12 @@ public class Venta extends javax.swing.JInternalFrame {
                 }
             }
         }
-
+        if (evt.getClickCount() == 3) {
+            compra_inventario com_in = new compra_inventario(new javax.swing.JFrame(), true);
+            com_in.setVisible(true);
+//            prestacion = pr.findPrPrestacionesEntities();
+//            Tablas.TablaPrestaciones(prestacion, tblPrestacion);
+        }
     }//GEN-LAST:event_tba_detalleMousePressed
 
     private void tba_detalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tba_detalleKeyTyped
@@ -1828,6 +1838,10 @@ public class Venta extends javax.swing.JInternalFrame {
         setVisible(false);
         ses.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void tba_detalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tba_detalleMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tba_detalleMouseClicked
 
     public Long IdProductoDsdObPres(List<VeFacturaDetalle> listaDetFactura) {
         Long id_producto = null;
